@@ -3,37 +3,7 @@
     "type": "footer",
     "sections": {
         "sub_footer": {
-            "type": "custom-sub-footer",
-            "settings": {
-
-            }
-        },
-        "footer": {
-            "type": "footer",
-            "blocks": {
-                "text_4bjX8n": {
-                    "type": "text",
-                    "settings": {
-                        "heading": "Heading",
-                        "subtext": "<p>LeBron Jamees</p>"
-                    }
-                }
-            },
-            "block_order": ["text_4bjX8n"],
-            "settings": {
-                "color_scheme": "scheme-1",
-                "newsletter_enable": true,
-                "newsletter_heading": "Subscribe to our emails",
-                "enable_follow_on_shop": true,
-                "show_social": true,
-                "enable_country_selector": true,
-                "enable_language_selector": true,
-                "payment_enable": true,
-                "show_policy": true,
-                "margin_top": 0,
-                "padding_top": 36,
-                "padding_bottom": 36
-            }
+            "type": "my-sub-footer",
         }
     },
     "order": ["sub_footer", "footer"]
