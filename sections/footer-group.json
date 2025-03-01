@@ -2,9 +2,9 @@
     "name": "t:sections.footer.name",
     "type": "footer",
     "sections": {
-        "sub_footer": {
-            "type": "my-sub-footer",
+        "footer": {
+            "type": "my-footer"
         }
     },
-    "order": ["sub_footer", "footer"]
+    "order": ["footer"]
 }

@@ -1,0 +1,77 @@
+{% comment %}
+    Section name: フッター
+    Description: 自分でカスタムデザインしたフッター
+{% endcomment %}
+
+
+<style>
+    .footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 350px;
+        background-color: rgb(238, 238, 238);
+        padding: 20rem 0;
+        
+    }
+    .footer-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 25%;
+        height: 250px;
+        gap: 1rem;
+        
+    }
+    .quick-links-contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        gap: 0.5rem;
+    }
+    .quick-links {
+        text-decoration: none;
+        color: black;
+    }
+    .quick-links:hover {
+        color: grey;
+    }
+
+
+</style>
+
+<div class="footer">
+    <div class="footer-block">
+        <img 
+            src="{{ 'my-assets/ryu-logo.png' | asset_url  }}" 
+            alt="ryu-logo"
+            width="150"
+            height="150"
+        >
+    </div>
+    <div class="footer-block">
+        <div class="mission-header"><b>Our Mission</b></div>
+        <div class="mission-text">
+            This site is more than just a collection of my film photos and linocut prints—it's a hands-on project to practice and grow my skills in Shopify development. My mission is to create a functional, visually engaging store while celebrating the art forms I love creating.
+        </div>
+    </div>
+    <div class="footer-block">
+        <div class="quick-links-header"><b>Quick Links</b></div>
+        <div class="quick-links-contents">
+            <a href="https://ryuhiroyama.com" class="quick-links">Portfolio</a>
+            <a href="https://github.com/lyuhiroyama" class="quick-links">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+{%  schema  %} 
+{
+    "name": "フッター"
+}
+{% endschema %}  
