@@ -1,0 +1,37 @@
+{% comment %}
+    Section name: Custom Sub-footer
+    Description: フッターの上に設置する「サブフッター」
+{% endcomment %}
+
+
+<style>
+.sub-footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links:hover {
+    color: grey;
+}
+
+</style>
+
+
+
+<div class="sub-footer">
+  <a href="https://ryuhiroyama.com" class="nav-links">ポートフォリオサイト</a>
+  <a href="https://github.com/lyuhiroyama" class="nav-links">GitHub</a>
+</div>
+
+{% schema %}
+{
+    "name": "サブフッター"
+}
+{% endschema %}
