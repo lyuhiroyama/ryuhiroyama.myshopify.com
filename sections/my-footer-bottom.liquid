@@ -16,49 +16,70 @@
         border: 1px solid rgb(208, 207, 207);
     }
     .localization-wrapper {
-        height: 100%;
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 80%;    
     }
+
+    .forms-wrapper {
+        display: flex;
+        align-items: center;
+        width: 400px;
+    }
+    .forms-wrapper form {
+        gap: 1rem;
+    }
+    select.localization-selector {
+        padding: 1rem;
+        width: 150px;
+    }
+
+    
 </style>
 
 <div class="footer-bottom">
     <hr>    
     <div class="localization-wrapper">
-        
-        {%- form 'localization', class: 'localization-form' -%}
-            <div>Language</div>
-            <select>
-                {%- for language in shop.published_locales -%}
-                    <option value="{{ language.iso_code }}"
-                        {% if language.iso_code == request.locale.iso_code %}
-                            selected
-                        {% endif %}
-                    >
-                        {{ language.endonym_name }}
-                    </option>
-                {%- endfor -%}
-            </select>
-        {% endform %}
-
-        {%- form 'localization', class: 'localization-form' -%}
-        {% assign allowed_countries = 'US,CA,JP,KR' | split: ',' %}
-            <div>Country</div>
-            <select class="localization-selector" name="country_code">
-                {% for country in localization.available_countries %}
-                    {% if allowed_countries contains country.iso_code %}
-                        <option value="{{ country.iso_code }}"
-                            {%- if country.iso_code == request.country.iso_code -%}
-                            selected
-                            {%- endif -%}
+        <div class="forms-wrapper">
+            {%- form 'localization', class: 'localization-form' -%}
+                <div>Language</div>
+                <select class="localization-selector">
+                    {%- for language in shop.published_locales -%}
+                        <option value="{{ language.iso_code }}"
+                            {% if language.iso_code == request.locale.iso_code %}
+                                selected
+                            {% endif %}
                         >
-                            {{ country.name }} ({{ country.currency.iso_code }}{{ country.currency.symbol }})
+                            {{ language.endonym_name }}
                         </option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        {%- endform -%}
+                    {%- endfor -%}
+                    <i class="fa-solid fa-caret-down"></i>
+                </select>
+            {% endform %}
 
+            {%- form 'localization', class: 'localization-form' -%}
+            {% assign allowed_countries = 'US,CA,JP,KR' | split: ',' %}
+                <div>Country</div>
+                <select class="localization-selector" name="country_code">
+                    {% for country in localization.available_countries %}
+                        {% if allowed_countries contains country.iso_code %}
+                            <option value="{{ country.iso_code }}"
+                                {%- if country.iso_code == request.country.iso_code -%}
+                                selected
+                                {%- endif -%}
+                            >
+                                {{ country.name }} ({{ country.currency.iso_code }}{{ country.currency.symbol }})
+                            </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            {%- endform -%}
+        </div>
+        <div>@ 2025, ryuhiroyama</div>
     </div>
+    
 </div>
 
 {%  schema  %} 
