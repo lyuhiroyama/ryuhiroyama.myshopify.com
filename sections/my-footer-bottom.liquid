@@ -61,7 +61,7 @@
 
             {%- form 'localization', class: 'localization-form' -%}
             {% assign allowed_countries = 'US,CA,JP,KR' | split: ',' %}
-                <div>Country</div>
+                <div>Currency</div>
                 <select class="localization-selector" name="country_code">
                     {% for country in localization.available_countries %}
                         {% if allowed_countries contains country.iso_code %}
