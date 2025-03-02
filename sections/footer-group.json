@@ -8,16 +8,20 @@
  * ------------------------------------------------------------
  */
 {
-
-    "name": "t:sections.footer.name",
-    "type": "footer",
-    "sections": {
-        "footer": {
-            "type": "my-footer"
-        },
-        "footer-bottom": {
-            "type": "my-footer-bottom"
-        }
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "my-footer",
+      "settings": {}
     },
-    "order": ["footer", "footer-bottom"]
+    "footer-bottom": {
+      "type": "my-footer-bottom",
+      "settings": {}
+    }
+  },
+  "order": [
+    "footer",
+    "footer-bottom"
+  ]
 }
