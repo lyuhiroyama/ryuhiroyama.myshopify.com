@@ -4,7 +4,10 @@
     "sections": {
         "footer": {
             "type": "my-footer"
+        },
+        "footer-bottom": {
+            "type": "my-footer-bottom"
         }
     },
-    "order": ["footer"]
+    "order": ["footer", "footer-bottom"]
 }

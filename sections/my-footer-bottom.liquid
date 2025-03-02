@@ -1,0 +1,65 @@
+{% comment %}
+    Section name: フッターボトム
+    Description: フッター下エリア
+{% endcomment %}
+
+<style>
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        background-color: #eeeeee;
+    }
+    hr {
+        margin: 0;
+        width: 100%;
+        border: 1px solid rgb(208, 207, 207);
+    }
+    .localization-wrapper {
+        height: 100%;
+        
+    }
+</style>
+
+<div class="footer-bottom">
+    <hr>    
+    <div class="localization-wrapper">
+        
+        {%- form 'localization', class: 'localization-form' -%}
+            <div>Language</div>
+            <select>
+                {%- for language in shop.published_locales -%}
+                    <option value="{{ language.iso_code }}"
+                        {% if language.iso_code == request.locale.iso_code %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ language.endonym_name }}
+                    </option>
+                {%- endfor -%}
+            </select>
+        {% endform %}
+
+        {%- form 'localization', class: 'localization-form' -%}
+            <div>Country</div>
+            <select class="localization-selector" name="country_code">
+                {% for country in localization.available_countries %}
+                    <option value="{{ country.iso_code }}"
+                        {%- if country.iso_code == request.country.iso_code -%}
+                        selected
+                        {%- endif -%}
+                    >
+                        {{ country.name }} ({{ country.currency.iso_code }}{{ country.currency.symbol }})
+                    </option>
+                {% endfor %}
+            </select>
+        {%- endform -%}
+
+    </div>
+</div>
+
+{%  schema  %} 
+    {
+        "name": "フッターボトム"
+    }
+{% endschema %}  
